@@ -1,17 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import {View, Text, StyleSheet, Image, SafeAreaView} from 'react-native';
 
 export default function App() {
-  console.log('a');
-  let x = 1;
-
-  const handlePress = () => console.log('Text Pressed');
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Hello React Native World Test Today. this is very long line using the
-        property
-      </Text>
+      <Text>Hello React Native World Test.</Text>
+      <Image source={require('./assets/kb.png')} />
     </SafeAreaView>
   );
 }
@@ -19,6 +13,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
