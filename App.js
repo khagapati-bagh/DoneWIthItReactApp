@@ -1,11 +1,26 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, SafeAreaView} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableWithoutFeedback,
+  StyleSheet,
+  Image,
+  SafeAreaView,
+} from 'react-native';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello React Native World Test.</Text>
-      <Image source={require('./assets/kb.png')} />
+      <TouchableWithoutFeedback onPress={() => console.log('Image tapped')}>
+        <Image
+          source={{
+            width: 200,
+            height: 300,
+            uri: 'https://picsum.photos/200/300',
+          }}
+        />
+      </TouchableWithoutFeedback>
     </SafeAreaView>
   );
 }
