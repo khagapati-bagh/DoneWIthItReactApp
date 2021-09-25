@@ -2,7 +2,7 @@ import React from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
+  TouchableHighlight,
   StyleSheet,
   Image,
   SafeAreaView,
@@ -12,7 +12,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello React Native World Test.</Text>
-      <TouchableOpacity onPress={() => console.log('Image tapped')}>
+      <TouchableHighlight onPress={() => console.log('Image tapped')}>
         <Image
           source={{
             width: 200,
@@ -20,7 +20,7 @@ export default function App() {
             uri: 'https://picsum.photos/200/300',
           }}
         />
-      </TouchableOpacity>
+      </TouchableHighlight>
     </SafeAreaView>
   );
 }
