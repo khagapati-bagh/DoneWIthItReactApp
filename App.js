@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView, Alert, Button} from 'react-native';
+import {
+  StyleSheet,
+  SafeAreaView,
+  Button,
+  Platform,
+  StatusBar,
+} from 'react-native';
 
 export default function App() {
   return (
@@ -7,12 +13,7 @@ export default function App() {
       <Button
         color="orange"
         title="Click Me"
-        onPress={() =>
-          Alert.alert('My title', 'My message', [
-            {text: 'Yes', onPress: () => console.log('Yes')},
-            {text: 'No', onPress: () => console.log('No')},
-          ])
-        }
+        onPress={() => console.log('Button Tapped')}
       />
     </SafeAreaView>
   );
@@ -22,7 +23,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 });
