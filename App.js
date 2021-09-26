@@ -1,18 +1,21 @@
 import React from 'react';
 import {StyleSheet, SafeAreaView, View, Dimensions} from 'react-native';
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from '@react-native-community/hooks';
 
 export default function App() {
-  console.log(Dimensions.get('screen'));
-  console.log(Dimensions.get('window'));
+  const orientation = useDeviceOrientation();
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View
         style={{
           backgroundColor: 'dodgerblue',
-          height: '30%',
+          height: orientation.landscape ? '100%' : '30%',
           width: '100%',
         }}></View>
-    </SafeAreaView>
+    </View>
   );
 }
 
