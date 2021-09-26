@@ -1,20 +1,17 @@
 import React from 'react';
-import {
-  StyleSheet,
-  SafeAreaView,
-  Button,
-  Platform,
-  StatusBar,
-} from 'react-native';
+import {StyleSheet, SafeAreaView, View, Dimensions} from 'react-native';
 
 export default function App() {
+  console.log(Dimensions.get('screen'));
+  console.log(Dimensions.get('window'));
   return (
     <SafeAreaView style={styles.container}>
-      <Button
-        color="orange"
-        title="Click Me"
-        onPress={() => console.log('Button Tapped')}
-      />
+      <View
+        style={{
+          backgroundColor: 'dodgerblue',
+          height: '30%',
+          width: '100%',
+        }}></View>
     </SafeAreaView>
   );
 }
@@ -23,6 +20,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 });
