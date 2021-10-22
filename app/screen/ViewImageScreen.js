@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {Image, StyleSheet, View, Text} from 'react-native';
 
 import colors from '../config/colors';
 
@@ -8,6 +8,7 @@ function ViewImageScreen(props) {
     <View style={styles.container}>
       <View style={styles.closeIcon}></View>
       <View style={styles.deleteIcon}></View>
+      <Text>Welcome to DoneWithIt </Text>
       <Image
         resizeMode="contain"
         style={styles.image}
